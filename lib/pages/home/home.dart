@@ -10,7 +10,6 @@ import 'package:version_management/model/repo_list/repo_list.dart';
 import 'package:version_management/pages/home/drawer.dart';
 import 'package:version_management/pages/home/repo_info.dart';
 import 'package:version_management/store/repo_list_store.dart';
-import 'package:version_management/utils/app_theme.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -37,11 +36,7 @@ class _HomeState extends State<Home> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          '版本管理',
-          style: TextStyle(fontSize: AppTheme.defaultFontSize),
-        ),
-        backgroundColor: AppTheme.mainColor,
+        title: const Text('版本管理'),
         actions: [
           IconButton(
             splashRadius: 20,
@@ -51,6 +46,7 @@ class _HomeState extends State<Home> {
               repoStore.setData(list);
             },
           ),
+          const SizedBox(width: 20),
         ],
       ),
       body: Container(

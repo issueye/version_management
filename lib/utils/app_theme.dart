@@ -26,11 +26,22 @@ class AppTheme {
   static const FontWeight defaultFontWeight = FontWeight.w400;
 
   static const double defaultTextFieldHeight = 30; // 输入框高度
-  static const double defultAppBarHeight = 40; // 标题高度
+  static const double defaultAppBarHeight = 40; // 标题高度
 
   static const AppBarTheme appBarTheme = AppBarTheme(
-    toolbarHeight: AppTheme.defultAppBarHeight,
+    toolbarHeight: AppTheme.defaultAppBarHeight,
+    titleTextStyle: TextStyle(
+      fontSize: AppTheme.defaultFontSize,
+      fontFamily: AppTheme.defaultFontFamily,
+    ),
+    backgroundColor: AppTheme.mainColor,
   );
+
+  static const defaultTextStyle = TextStyle(
+              fontSize: AppTheme.defaultFontSize,
+              fontFamily: AppTheme.defaultFontFamily,
+              color: AppTheme.defaultContentTextColor,
+            );
 
   static const EdgeInsetsGeometry defaultButtonPadding =
       EdgeInsets.symmetric(horizontal: 14, vertical: 14); // 默认内边距

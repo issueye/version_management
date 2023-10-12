@@ -52,12 +52,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         focusNode: _focusNode,
         controller: widget.controller,
         // 内容的字体
-        style: const TextStyle(
-          fontSize: AppTheme.defaultFontSize,
-          fontFamily: AppTheme.defaultFontFamily,
-          fontWeight: AppTheme.defaultFontWeight,
-          color: AppTheme.defaultContentTextColor,
-        ),
+        style: AppTheme.defaultTextStyle,
         decoration: InputDecoration(
           // 内容内边距
           contentPadding: AppTheme.defaultTextFieldContentPadding,

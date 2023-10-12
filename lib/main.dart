@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:version_management/pages/home/home.dart';
+import 'package:version_management/router/index.dart';
 import 'package:version_management/store/repo_list_store.dart';
+import 'package:version_management/store/version_info_store.dart';
 import 'package:version_management/utils/app_theme.dart';
 
 void main() {
@@ -16,8 +17,9 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<RepoListStore>(create: (_) => RepoListStore()),
+        ChangeNotifierProvider<VersionInfoStore>(create: (_) => VersionInfoStore()),
       ],
-      child: MaterialApp(
+      child: MaterialApp.router(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
           fontFamily: AppTheme.defaultFontFamily,
           appBarTheme: AppTheme.appBarTheme,
         ),
-        home: const Home(),
+        routerConfig: AppRoutes.router,
       ),
     );
   }

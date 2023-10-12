@@ -26,10 +26,10 @@ class DioSingleton {
     return _dioInstance!;
   }
 
-  static Future<Response> getData(String url) async {
+  static Future<Response> getData(String url, {Map<String, dynamic>? params}) async {
     var d = DioSingleton.instance;
     try {
-      final response = await d.get(url);
+      final response = await d.get(url, queryParameters: params);
       return response;
     } catch (error) {
       throw Exception('Failed to fetch data');
