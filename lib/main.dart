@@ -6,6 +6,8 @@ import 'package:version_management/store/version_info_store.dart';
 import 'package:version_management/utils/app_theme.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(const MyApp());
 }
 

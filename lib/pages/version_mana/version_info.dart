@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:version_management/common/assets/images.dart';
-import 'package:version_management/common/message/material_message.dart';
 import 'package:version_management/components/custom_button.dart';
+import 'package:version_management/components/custom_text.dart';
+import 'package:version_management/components/custom_vertical_divider.dart';
 import 'package:version_management/model/version_info/datum.dart';
 import 'package:version_management/utils/app_theme.dart';
 import 'package:version_management/utils/base_components.dart';
@@ -43,9 +43,31 @@ class _VersionInfoState extends State<VersionInfo> {
         onPressed: () {},
         child: Container(
           padding: AppTheme.defaultButtonPadding,
-          child: const Text(
-            '123',
-            style: AppTheme.defaultTextStyle,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CustomText(text: widget.data.appName!),
+              const SizedBox(height: 10),
+              BaseComponent.divider,
+              const SizedBox(height: 10),
+              CustomText(text: widget.data.commitHash!),
+              const SizedBox(height: 20),
+              const CustomText(text: '版本内容:'),
+              const SizedBox(height: 10),
+              CustomText(text: widget.data.content!),
+              const SizedBox(height: 20),
+              Row(
+                children: [
+                  RawButton(name: widget.data.version!, onPressed: () {},),
+                  const CustomVerticalDivider(),
+                  RawButton(name: widget.data.branch!, onPressed: () {},),
+                  const CustomVerticalDivider(),
+                  RawButton(name: widget.data.tag!, onPressed: () {},),
+                  const CustomVerticalDivider(),
+                  RawButton(name: widget.data.createAt!, onPressed: () {},),
+                ],
+              ),
+            ],
           ),
         ),
       ),

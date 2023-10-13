@@ -17,4 +17,16 @@ class Images {
     width: 15,
     height: 15,
   );
+
+  static Image idImage = Image.asset(
+    'assets/images/ID.png',
+    width: 15,
+    height: 15,
+  );
+
+  static Image contentImage = Image.asset(
+    'assets/images/content.png',
+    width: 15,
+    height: 15,
+  );
 }
