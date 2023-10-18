@@ -101,9 +101,13 @@ class _RawButtonState extends State<RawButton> {
           overlayColor: MaterialStateProperty.all(widget.color), // 高亮颜色
           shadowColor: MaterialStateProperty.all(widget.color), // 阴影颜色
           elevation: MaterialStateProperty.all(0), // 阴影值
-          textStyle: MaterialStateProperty.all(const TextStyle(fontSize: 11 , fontFamily: AppTheme.defaultFontFamily)),
-          shape: MaterialStateProperty.all(BeveledRectangleBorder(borderRadius: BorderRadius.circular(0))),
-          padding: MaterialStateProperty.all(const EdgeInsetsDirectional.symmetric(horizontal: 2, vertical: 1)), // 
+          textStyle: MaterialStateProperty.all(const TextStyle(
+              fontSize: 11, fontFamily: AppTheme.defaultFontFamily)),
+          shape: MaterialStateProperty.all(
+              BeveledRectangleBorder(borderRadius: BorderRadius.circular(0))),
+          padding: MaterialStateProperty.all(
+              const EdgeInsetsDirectional.symmetric(
+                  horizontal: 2, vertical: 1)), //
         ),
         onPressed: widget.onPressed,
         child: Text(widget.name),
